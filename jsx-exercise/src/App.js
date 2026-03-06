@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Constrols from './Controls.js';
+import Controls from './Controls.js';
 import UserList from './UserList.js';
+import Footer from './Footer.js';
 
 function App() {
   let currentYear = new Date().getFullYear();
@@ -11,9 +12,7 @@ function App() {
     <h1>ENSF-381: Full Stack Web Development</h1>
     <p>React Components</p>
     <p>{currentYear}</p>
-    <p>{isLoggedIn ? "Welcome Back!" : "Please log in."}</p>
-    <Constrols />
-    <UserList />
+    <p>{isLoggedIn ? <section><Controls /><UserList /><Footer /></section> : "Please log in."}</p>
   </div>
 
   );
